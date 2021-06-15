@@ -27,4 +27,13 @@ public class ExceptedExceptionRule {
 
         throw new IllegalArgumentException("This is illegal", new ArithmeticException());
     }
+
+    @Test
+    public void ExceptedRuleNegativeTest1() {
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectCause(isA(NullPointerException.class));
+        thrown.expectMessage("This is illegal");
+
+        throw new IllegalArgumentException("This is illegal", new NumberFormatException());
+    }
 }
