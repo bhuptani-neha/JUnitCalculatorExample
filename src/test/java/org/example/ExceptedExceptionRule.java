@@ -34,6 +34,6 @@ public class ExceptedExceptionRule {
         thrown.expectCause(isA(NullPointerException.class));
         thrown.expectMessage("This is illegal");
 
-        throw new IllegalArgumentException("This is illegal", new NumberFormatException());
+        throw new IllegalArgumentException("This is illegal", new IndexOutOfBoundsException());
     }
 }
